@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academic-goals.html">Academic Goals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <div class="container mt-5" id="index">
+        <h1 class="text-center">Welcome to My Profile</h1>
+        <p class="text-center">Hello! My name is Mboira Isaac Newton. I am 21 years old and currently a freshman at Bugema University, pursuing web designing and development in 2024. This website shares my academic goals and how you can contact me.</p>
+   <img src="IMG20241122093818.jpg" alt="" width="200px" height="250px" border-radius="5px">
+    </div>
+
+    <!-- Academic Goals Content -->
+    <div class="container mt-5" id="academic-goals" style="display:none;">
+        <h1 class="text-center">My Academic Goals</h1>
+        <p class="text-center">As a student of web designing and development, my goals include mastering responsive web design, learning advanced JavaScript frameworks, and building professional-level websites and applications. I also aim to collaborate on innovative projects and enhance user experience through creative design solutions.</p>
+    </div>
+
+    <!-- Contacts Content -->
+    <div class="container mt-5" id="contacts" style="display:none;">
+        <h1 class="text-center">Contact Me</h1>
+        <p class="text-center">Feel free to reach out to me:</p>
+        <ul class="list-unstyled text-center">
+            <li>Phone: 0753926638, 0750149796</li>
+            <li>Email: <a href="mailto:Mboiraisaac36@gmail.com">Mboiraisaac36@gmail.com</a></li>
+        </ul>
+        <h3 class="text-center mt-4">Send Me a Message</h3>
+        <form class="mt-3">
+            <div class="mb-3">
+                <label for="viewerName" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="viewerName" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+                <label for="viewerContact" class="form-label">Your Contact</label>
+                <input type="text" class="form-control" id="viewerContact" placeholder="Enter your contact information">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Mboira Isaac Newton. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').replace('.html', '');
+                document.querySelectorAll('.container.mt-5').forEach(section => section.style.display = 'none');
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+        document.getElementById('index').style.display = 'block';
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
